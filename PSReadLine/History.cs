@@ -53,7 +53,7 @@ namespace PSConsoleUtilities
                 });
                 _currentHistoryIndex = _history.Count;
 
-                if (_options.HistorySaveStyle == HistorySaveStyle.SaveIncrementally && !readingHistoryFile)
+                if (_options.HistorySaveStyle == HistorySaveStyle.Incrementally && !readingHistoryFile)
                 {
                     IncrementalHistoryWrite();
                 }
@@ -139,7 +139,7 @@ namespace PSConsoleUtilities
 
         private void MaybeReadHistoryFile()
         {
-            if (Options.HistorySaveStyle == HistorySaveStyle.SaveIncrementally)
+            if (Options.HistorySaveStyle == HistorySaveStyle.Incrementally)
             {
                 if (_historyFileMutex.WaitOne(1000))
                 {
